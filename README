@@ -1,1 +1,38 @@
-Hello, first commit 
+Hello, Donc. 
+
+Ceci est le projet de réalisation d'un site pour une créperie.
+
+Le principe est de permettre aux client de choisir quoi mettre dans sa crêpe, s'il veux commander, manger sur place ou emporter... ect. Bref, en écrivant, ça ressemble pas mal au interface de commande de type fastfood...
+Pour changer un peu ce principe morne, je vais sans doute ajouter quelques fonctionalités, présenter ici sous forme d'user story.
+
+Un client dois pouvoir faire la demande d'ajout d'un ingrediant
+Un client dois pouvoir voir les retour d'autre client vis a vis d'un mélange spécifique
+Un client régulier dois avoir des réductions.
+
+Sinon, voici la description la complette de la base du site. égallement moment de reflexion sur comment commencer. bref. 
+
+Un utiliateur(client/administrateur) dois pouvoir naviguer sur le site
+le site dois posséder plusieurs "pages" 
+    une page principalle qui donne faim, et présente la créperie
+    une page permettant de trouver le restaurant (gmap, réseaux, numéro, adresse mail)
+    la page de réservation 
+
+    la page d'adminitration
+
+La base de donnée sera composer de :
+    une table utilisateur
+        les info de l'utilisateur
+        son status (client/administrateur)
+        ses commandes
+    une tablle commande   
+        les crépes
+        ses ajout(glouglou, salade, autre desert... raclette, que sais-je)
+    une table crépes
+        un agregat d'ingrediant
+        une note de gout
+        une note de popularité
+    une table ingrédiants 
+        composer de :
+            son prix
+            sa popularité (% de toutes les crèpes avec l'ingrediant)
+            son apréciabilité(?) étant la note moyenne de toutes les crèpes avec cet ingrédiants
