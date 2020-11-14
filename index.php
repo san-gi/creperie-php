@@ -1,2 +1,5 @@
 <?php
-namespace App;
+use App\vue\test;
+require 'vendor/autoload.php';
+
+new test();
