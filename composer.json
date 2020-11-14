@@ -1,0 +1,17 @@
+{
+    "name": "damien/creperie-website",
+    "description": "site web php sans framework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Damien Deturck",
+            "email": "deturckdamien@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\":"creperie-website"
+        }
+    },
+    "require": {}
+}
