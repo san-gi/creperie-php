@@ -1,16 +1,18 @@
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title><?= $title ?></title>
+    <title><?= $this->title ?></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/script.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/vendor/twbs/bootstrap/dist/css/bootstrap.css'>
-    <script src='./public/js/main.js'></script>
-    <script src='./vendor/twbs/bootstrap/site/docs/4.5/assets/js/vendor/jquery.slim.min.js'></script>
-    <script src="./vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/script.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/bootstrap.css'>
+    <script src='./js/main.js'></script>
+    <script src='./js/jquery.slim.min.js'></script>
+    <script src="./js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -49,7 +51,7 @@
             </form>
         </div>
     </nav>
-    <?= $content ?>
+    <?= $this->content ?>
 </body>
 
 </html>
