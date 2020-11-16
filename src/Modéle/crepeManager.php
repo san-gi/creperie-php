@@ -27,15 +27,15 @@ class CrepeManager
     public function getAll()
     {
      
-        // $request = 'select * from Personne';
-        // $query = $this->connexion->prepare($request);
-        // $result = array();
-        // if ($query->execute()) {
-        //     foreach ($query as  $row) {
-        //         $result[] = new Personne( $row);
-        //     }
-        //     return $result;
-        // }
+         $request = 'select * from crepe';
+         $query = $this->connexion->prepare($request);
+         $result = array();
+         if ($query->execute()) {
+             foreach ($query as  $row) {
+                 $result[] = new Crepe( $row);
+             }
+             return $result;
+         }
         
     }
     public function get($id)

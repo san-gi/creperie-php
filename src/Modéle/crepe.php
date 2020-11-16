@@ -5,6 +5,7 @@ class Crepe
     private $id;
     private $name;
     private $type;
+    private $img;
 
     public function __construct(array $data)
     {
@@ -33,6 +34,14 @@ class Crepe
     public function getType()
     {
         return $this->type;
+    }
+    public function setImg($i)
+    {
+        $this->img = $i;
+    }
+    public function getImg()
+    {
+        return $this->img;
     }
 
     public function __toString()
