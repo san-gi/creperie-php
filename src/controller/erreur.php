@@ -3,15 +3,15 @@
 namespace App\Controller;
 
 
-class front
+class Erreur
 {
   public $title;
   public $content;
   public $render;
-  public function __construct()
+  public function __construct($erreur)
   {
     $this->title = "salut";
-    $this->content = $this->renderer("../Src/Vue/home.php");
+    $this->content = $this->renderer("../Src/Vue/404.php");
     $this->render = $this->renderer("../Src/Vue/template.php");
   }
   public function renderer($path)

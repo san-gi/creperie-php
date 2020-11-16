@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-
-class front
+//pas maintenant
+class abstractController
 {
   public $title;
   public $content;

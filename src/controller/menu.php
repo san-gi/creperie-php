@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 
-class front
+class Menu
 {
   public $title;
   public $content;
@@ -11,7 +11,7 @@ class front
   public function __construct()
   {
     $this->title = "salut";
-    $this->content = $this->renderer("../Src/Vue/home.php");
+    $this->content = $this->renderer("../Src/Vue/menu.php");
     $this->render = $this->renderer("../Src/Vue/template.php");
   }
   public function renderer($path)
