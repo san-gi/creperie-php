@@ -1,13 +1,27 @@
-Hello, Donc. 
+# projet de creperie 3.0
 
 Ceci est le projet de réalisation d'un site pour une créperie.
 
-Le principe est de permettre aux client de choisir quoi mettre dans sa crêpe, s'il veux commander, manger sur place ou emporter... ect. Bref, en écrivant, ça ressemble pas mal au interface de commande de type fastfood...
+Le principe est de permettre aux client de choisir quoi mettre dans sa crêpe, s'il veux commander, 
+manger sur place ou emporter... ect. Bref, en écrivant, ça ressemble pas mal au interface de commande de type fastfood...
+
+User story : 
+    client : 
+        * Un client dois pouvoir voir les crepes
+        * Un client dois pouvoir voir les "autre" (boisson, desert ect)
+        * Un client dois pouvoir réaliser une commande (ensemble de crépes + autres)
+        * un client doit pouvoir commenter la crépes qu'il a manger, et la noter.
+        * un client dois pouvoir se connecter
+    admin : 
+        * un administrateur dois pouvoir gérer les crépes préentes (ajout/suppression)
+        * un administrateur dois pouvoir gérer les clients
 Pour changer un peu ce principe morne, je vais sans doute ajouter quelques fonctionalités, présenter ici sous forme d'user story.
 
-Un client dois pouvoir faire la demande d'ajout d'un ingrediant
-Un client dois pouvoir voir les retour d'autre client vis a vis d'un mélange spécifique
-Un client régulier dois avoir des réductions.
+* Un client dois pouvoir réaliser sa crépes (select ingrédiants)
+* Un client dois pouvoir faire la demande d'ajout d'un ingrediant
+* Un client dois pouvoir voir les retour d'autre client vis a vis d'un mélange spécifique
+* Un client régulier dois avoir des réductions.
+* un administrateur dois pouvoir gérer les ingrédiants
 
 Sinon, voici la description la complette de la base du site. égallement moment de reflexion sur comment commencer. bref. 
 
@@ -36,3 +50,7 @@ La base de donnée sera composer de :
             son prix
             sa popularité (% de toutes les crèpes avec l'ingrediant)
             son apréciabilité(?) étant la note moyenne de toutes les crèpes avec cet ingrédiants
+
+
+La base de donnée utiliser est héberger par moi même a l'adresse sangi.ddns.net 
+tournant sous la distribution 10.1.45-MariaDB
