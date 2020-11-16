@@ -36,3 +36,7 @@ La base de donnée sera composer de :
             son prix
             sa popularité (% de toutes les crèpes avec l'ingrediant)
             son apréciabilité(?) étant la note moyenne de toutes les crèpes avec cet ingrédiants
+
+
+La base de donnée utiliser est héberger par moi même a l'adresse sangi.ddns.net 
+tournant sous la distribution 10.1.45-MariaDB
