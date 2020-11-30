@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Modéle;
 class CrepeManager
 {
@@ -6,8 +7,9 @@ class CrepeManager
 
     public function __construct()
     {
-       
+
     }
+
     public function setConnexion()
     {
         $co = new Database(array(
@@ -15,50 +17,59 @@ class CrepeManager
             "Serveur" => "192.168.1.21",
             "Pass" => "sitePHP;",
             "BD" => "crepe"
-          ));
+        ));
         $this->connexion = $co->getConnexion();
     }
 
     public function add(Crepe $p)
     {
-       // $query = $this->connexion->prepare("INSERT INTO Personne(nom, prenom) values (?, ?)");
-        //$query->execute([$p->getName(), $p->getType()]);
+        var_dump($p);
+        $query = $this->connexion->prepare("INSERT INTO crepe (img, name, type) values (?, ?, ?)");
+        $query->execute([$p->getImg(), $p->getName(), $p->getType()]);
     }
+
     public function getAll()
     {
-     
-         $request = 'select * from crepe';
-         $query = $this->connexion->prepare($request);
-         $result = array();
-         if ($query->execute()) {
-             foreach ($query as  $row) {
-                 $result[] = new Crepe( $row);
-             }
-             return $result;
-         }
-        
+
+        $request = 'select * from crepe';
+        $query = $this->connexion->prepare($request);
+        $result = array();
+        if ($query->execute()) {
+            foreach ($query as $row) {
+                $result[] = new Crepe($row);
+            }
+            return $result;
+        }
+
     }
+
     public function get($id)
     {
-        // $request = "select * from Personne where id = $id";
-        // $query = $this->connexion->prepare($request);
-        // $result = array();
-        // if ($query->execute()) {
-        //     foreach ($query as  $row) {
-        //         $result[] = new Personne( $row);
-        //     }
-        //     return $result[0];
-        // }
-        
+        $request = "select * from crepe where id = ?";
+        $query = $this->connexion->prepare($request);
+        $result = array();
+        if ($query->execute([$id])) {
+            foreach ($query as $row) {
+                $result[] = new Crepe($row);
+            }
+            return $result[0];
+        }
+
     }
-    public function delete(Crepe $perso)
+
+    public function delete(Crepe $c)
     {
-        //$query = $this->connexion->prepare("delete * from Personne where id = ? ;");
-        //$query->execute([$perso->getId()]);
+        var_dump($c);
+        var_dump($c->getId());
+        $query = $this->connexion->prepare("delete from crepe where id = ? ");
+        var_dump($query);
+        $query->execute([$c->getId()]);
     }
+
     public function update(Crepe $p)
     {
-        //$query = $this->connexion->prepare("UPDATE  Personne Set nom = ?, prenom = ? where id = ? ;");
-        //$query->execute([$p->getNom(), $p->getPrenom(),$p->getId()]);
+        var_dump($p->getType());
+        $query = $this->connexion->prepare("UPDATE crepe set img = ?, name = ?, type = ? where id = ? ");
+        $query->execute([$p->getImg(), $p->getName(), $p->getType(), $p->getId()]);
     }
 }
