@@ -24,13 +24,16 @@ class adminController
 
             if ($_POST["submit"] == "post") {
                 $a = new Crepe(["name" => $_POST["name"],
-                                "type" => "1",
-                                "img" => $_POST["img"]]);
+                    "type" => "1",
+                    "img" => $_POST["img"]]);
                 $this->crepeManager->add($a);
-            } else if($_POST["submit"] == "edit"){
-                $a = $this->crepeManager->get($_POST["id"]);
+            } else if ($_POST["submit"] == "edit") {
+                $a = new Crepe(["name" => $_POST["name"],
+                    "type" => "1",
+                    "img" => $_POST["img"],
+                    "id" => $_POST["id"]]);
                 $this->crepeManager->update($a);
-            }else if($_POST["submit"] == "delete"){
+            } else if ($_POST["submit"] == "delete") {
                 $a = $this->crepeManager->get($_POST["id"]);
                 $this->crepeManager->delete($a);
             }

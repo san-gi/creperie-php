@@ -23,7 +23,6 @@ class CrepeManager
 
     public function add(Crepe $p)
     {
-        var_dump($p);
         $query = $this->connexion->prepare("INSERT INTO crepe (img, name, type) values (?, ?, ?)");
         $query->execute([$p->getImg(), $p->getName(), $p->getType()]);
     }
@@ -59,17 +58,17 @@ class CrepeManager
 
     public function delete(Crepe $c)
     {
-        var_dump($c);
-        var_dump($c->getId());
+
         $query = $this->connexion->prepare("delete from crepe where id = ? ");
-        var_dump($query);
+
         $query->execute([$c->getId()]);
     }
 
     public function update(Crepe $p)
     {
-        var_dump($p->getType());
+        var_dump($p->getId());
         $query = $this->connexion->prepare("UPDATE crepe set img = ?, name = ?, type = ? where id = ? ");
         $query->execute([$p->getImg(), $p->getName(), $p->getType(), $p->getId()]);
+
     }
 }
