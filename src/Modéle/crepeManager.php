@@ -20,7 +20,7 @@ class CrepeManager
         ));
         $this->connexion = $co->getConnexion();
     }
-
+ 
     public function add(Crepe $p)
     {
         $query = $this->connexion->prepare("INSERT INTO crepe (img, name, type) values (?, ?, ?)");
