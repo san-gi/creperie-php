@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Modéle\commandes;
 use App\Modéle\CrepeManager;
 
 class Menu
@@ -24,8 +25,15 @@ class Menu
         else
             $this->user = $this->renderer("../Src/Vue/userNoConnect.php");
         $this->content = $this->renderer("../Src/Vue/menu.php");
-
         $this->render = $this->renderer("../Src/Vue/template.php");
+        if(!isset($_SESSION["commande"])){
+            $_SESSION["commande"] = [];
+        }
+        var_dump( $_SESSION["commande"]);
+        if(isset($_POST["crepeName"])){
+
+            $_SESSION["commande"][] = $_POST["crepeName"];
+        }
 
     }
 
