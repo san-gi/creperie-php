@@ -7,6 +7,7 @@
                     <form action="/api" method="post">
                         <input type="text" id="img" name="img" value=""><br><br>
                         <div class="card-body">
+                            <p>nouvelle crêpe</p>
                             <input type="text" id="name" name="name" value="name"><br><br>
                             <div class="btn-group">
                                 <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -44,23 +45,7 @@
                     </div>
                 </div>
             <?php endforeach ?>
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <form action="/api/post" method="post">
-                        <input type="text" id="img" name="img" value="/img/"><br><br>
-                        <div class="card-body">
-                            <input type="text" id="name" name="name" value="name"><br><br>
-                            <div class="btn-group">
-                                <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
-                                        value="post">ajout
-                                </button>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+
         </div>
 
     </div>
