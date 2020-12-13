@@ -11,6 +11,7 @@ class Menu
     public $render;
     public $crepeManager;
     public $crepes;
+    public $user;
 
     public function __construct()
     {
@@ -18,8 +19,14 @@ class Menu
         $this->crepeManager = new CrepeManager();
         $this->crepeManager->setConnexion();
         $this->crepes = $this->crepeManager->getAll();
+        if(isset($_SESSION["user"]))
+            $this->user = $this->renderer("../Src/Vue/userConnect.php");
+        else
+            $this->user = $this->renderer("../Src/Vue/userNoConnect.php");
         $this->content = $this->renderer("../Src/Vue/menu.php");
+
         $this->render = $this->renderer("../Src/Vue/template.php");
+
     }
 
     public function renderer($path)

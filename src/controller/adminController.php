@@ -13,6 +13,7 @@ class adminController
     public $render;
     public $crepeManager;
     public $crepes;
+    public $url;
 
     public function __construct($code)
     {

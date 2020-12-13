@@ -1,11 +1,11 @@
-<div class="album py-5 bg-light">
+<div class="album py-5 bg-dark">
     <div class="container">
 
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <form action="/api" method="post">
-                        <input type="text" id="img" name="img" value=""><br><br>
+                    <form action="/api/post" method="post">
+                        <input type="text" id="img" name="img" value="/img/"><br><br>
                         <div class="card-body">
                             <p>nouvelle crêpe</p>
                             <input type="text" id="name" name="name" value="name"><br><br>

@@ -5,8 +5,34 @@ use App\Controller\front;
 use App\Controller\Menu;
 use App\controller\adminController;
 use App\controller\apiController;
+use App\Modéle\userManager;
+use App\Modéle\user;
 
 require '../vendor/autoload.php';
+session_start ();
+if(isset($_POST["username"]) && isset($_POST["mail"])  && isset($_POST["password"])){
+    $users= new userManager();
+    $users->setConnexion();
+    $user = new user([
+        "username" => $_POST["username"],
+        "password" =>  $_POST["password"],
+        "mail" => $_POST["mail"],
+        "img" => "",
+        "commandes" => ""]);
+    $users->add($user);
+    $_SESSION["user"] = $user;
+}else if(isset($_POST["mail"])  && isset($_POST["password"])){
+    $users= new userManager();
+    $users->setConnexion();
+    $user = $users->get($_POST["mail"]);
+    if($user->getPassword()==$_POST["password"]){
+        $_SESSION["user"] = $user;
+    }
+}
+if(isset($_POST["disconect"])){
+    session_destroy();
+    session_start();
+}
 
 if ($_SERVER["REQUEST_URI"] === "/") {
     $page = new front();
@@ -18,7 +44,6 @@ if ($_SERVER["REQUEST_URI"] === "/") {
     $page = new adminController(1);
 } else {
     $page = new Erreur("404");
-    var_dump($_SERVER["REQUEST_URI"]);
 }
 ?>
 <?= $page->render ?>

@@ -53,7 +53,6 @@ class CrepeManager
             }
             return $result[0];
         }
-
     }
 
     public function delete(Crepe $c)
@@ -66,7 +65,7 @@ class CrepeManager
 
     public function update(Crepe $p)
     {
-        var_dump($p->getId());
+
         $query = $this->connexion->prepare("UPDATE crepe set img = ?, name = ?, type = ? where id = ? ");
         $query->execute([$p->getImg(), $p->getName(), $p->getType(), $p->getId()]);
 
