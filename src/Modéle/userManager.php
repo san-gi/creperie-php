@@ -39,4 +39,19 @@ class userManager
             return $result[0];
         }
     }
+
+    public function getAll()
+    {
+
+        $request = 'select * from user';
+        $query = $this->connexion->prepare($request);
+        $result = array();
+        if ($query->execute()) {
+            foreach ($query as $row) {
+                $result[] = new user($row);
+            }
+            return $result;
+        }
+
+    }
 }
