@@ -6,12 +6,17 @@ create table crepe(
     type int     
 );
 
-DROP TABLE IF EXISTS user;
-create table user(
+DROP TABLE IF EXISTS produits;
+create table produits(
     id int NOT NULL AUTO_INCREMENT primary key,
-    username varchar(64),
-    password varchar(64),
-    mail varchar(64),
-    img varchar(64),
-    commandes varchar(64)
+    name varchar(64),
+    createDate date,
+    category int,
+    foreign key(category) REFERENCES category(id)
+);
+DROP TABLE IF EXISTS category;
+create table category(
+    id int NOT NULL AUTO_INCREMENT primary key,
+    name varchar(64),
+    flag int
 );
