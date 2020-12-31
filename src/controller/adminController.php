@@ -13,11 +13,15 @@ class adminController
     public $render;
     public $crepeManager;
     public $crepes;
-    public $url;
+    public $table;
+    public $user;
 
     public function __construct($code)
     {
-
+        if(isset($_SESSION["user"]))
+            $this->user = $this->renderer("../Src/Vue/userConnect.php");
+        else
+            $this->user = $this->renderer("../Src/Vue/userNoConnect.php");
         $this->title = "admin";
         $this->crepeManager = new CrepeManager();
         $this->crepeManager->setConnexion();
@@ -39,9 +43,8 @@ class adminController
                 $this->crepeManager->delete($a);
             }
         }
-
-
         $this->crepes = $this->crepeManager->getAll();
+        $this->table = $this->renderer("../Src/Vue/admin/crepes.php");
         $this->content = $this->renderer("../Src/Vue/admin/menu.php");
         $this->render = $this->renderer("../Src/Vue/template.php");
     }

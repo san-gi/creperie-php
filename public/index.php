@@ -33,12 +33,11 @@ if(isset($_POST["disconect"])){
     session_destroy();
     session_start();
 }
-
 if ($_SERVER["REQUEST_URI"] === "/") {
     $page = new front();
 } else if ($_SERVER["REQUEST_URI"] == "/menu") {
     $page = new Menu();
-} else if ($_SERVER["REQUEST_URI"] == "/admin") {
+} else if (preg_match('/^\/admin/', $_SERVER["REQUEST_URI"])==1) {
     $page = new adminController(0);
 } else if (preg_match("/^\/api\//i",$_SERVER["REQUEST_URI"]) == 1) {
     $page = new adminController(1);
