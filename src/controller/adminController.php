@@ -30,7 +30,6 @@ class adminController
         $this->title = "admin";
 
 
-
         switch ($_SERVER["REQUEST_URI"]){
             case "/admin/crepes":
                 $this->crepeManager = new CrepeManager();
