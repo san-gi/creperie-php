@@ -7,9 +7,8 @@ namespace App\Modéle;
 class commandes
 {
     private $id;
-    private $name;
-    private $prix;
-    private $crepes = [];
+    private $crepe;
+    private $facture;
 
     public function __construct(array $data)
     {
@@ -23,21 +22,21 @@ class commandes
     {
         return $this->id;
     }
-    public function setName($n)
+    public function setCrepe($c)
     {
-        $this->name = $n;
+        $this->crepe = $c;
     }
-    public function getName()
+    public function getCrepe()
     {
-        return $this->name;
+        return $this->id;
     }
-    public function setPrix($p)
+    public function setFacture($f)
     {
-        $this->prix = $p;
+        $this->facture = $f;
     }
-    public function getPrix()
+    public function getFacture()
     {
-        return $this->prix;
+        return $this->facture;
     }
 
     public function __toString()

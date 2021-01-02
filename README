@@ -36,10 +36,12 @@ Ingrédiants_crepe : il s'agit d'une jonction entre crepe et ingrédiant. En eff
     ingrédiant (id)
 
 Commande : il s'agit de l'achat d'une crépe pas un utilisateur
+    id
     crepe
     facture
 
 facture : un assemnlage des truc commander
+    id
     un user
     un prix
     une date

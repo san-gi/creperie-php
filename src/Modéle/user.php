@@ -12,7 +12,6 @@ class user
     private $mail;
     private $img;
     private $role;
-    private $commandes;
 
     public function __construct(array $data)
     {
@@ -59,17 +58,9 @@ class user
     {
         return $this->img;
     }
-    public function setCommandes($c)
-    {
-        $this->commandes = $c;
-    }
-    public function getCommandes()
-    {
-        return $this->commandes;
-    }
     public function setRole($r)
     {
-        $this->commandes = $r;
+        $this->role = $r;
     }
     public function getRole()
     {

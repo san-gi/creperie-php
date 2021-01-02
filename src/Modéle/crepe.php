@@ -4,6 +4,8 @@ class Crepe
 {
     private $id;
     private $name;
+    private $price;
+    private $desc;
     private $type;
     private $img;
 
@@ -43,7 +45,24 @@ class Crepe
     {
         return $this->img;
     }
+    public function setPrice($p)
+    {
+        $this->img = $p;
+    }
+    public function getPrice()
+    {
+        return $this->price;
+    }
 
+    public function getDesc()
+    {
+        return $this->desc;
+    }
+
+    public function setDesc($desc)
+    {
+        $this->desc = $desc;
+    }
     public function __toString()
     {
         return ("$this->id $this->name  $this->type ");
