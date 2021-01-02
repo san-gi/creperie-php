@@ -5,6 +5,52 @@ Ceci est le projet de réalisation d'un site pour une créperie.
 Le principe est de permettre aux client de choisir quoi mettre dans sa crêpe, s'il veux commander, 
 manger sur place ou emporter... ect. Bref, en écrivant, ça ressemble pas mal au interface de commande de type fastfood...
 
+
+edit du 2 janvier 2020 sur la structure de la base de donnée (on verra si on a le temps pour les truc en plus, c'est partie pour un sacré rush)
+
+User : il s'agit d'un utilisateur
+    id
+    Username
+    Password
+    Mail
+    img
+    role
+
+Crepes : il s'agit d'une crépe spécifique avec ses ingrédiant et tout
+    id
+    img
+    nom
+    description
+    prix
+    type
+
+Ingrédiants : il s'aggit d'un ingrédiant de la crépe
+    id
+    nom
+    prix
+    (multiple ajout possible, alergéne, popularité ect, bref)
+
+Ingrédiants_crepe : il s'agit d'une jonction entre crepe et ingrédiant. En effet, il s'aggit d'une relation many to many
+    id
+    crepe (id)
+    ingrédiant (id)
+
+Commande : il s'agit de l'achat d'une crépe pas un utilisateur
+    crepe
+    facture
+
+facture : un assemnlage des truc commander
+    un user
+    un prix
+    une date
+
+
+
+
+
+
+
+
 User story : 
     client : 
         * Un client dois pouvoir voir les crepes
@@ -22,8 +68,6 @@ Pour changer un peu ce principe morne, je vais sans doute ajouter quelques fonct
 * Un client dois pouvoir voir les retour d'autre client vis a vis d'un mélange spécifique
 * Un client régulier dois avoir des réductions.
 * un administrateur dois pouvoir gérer les ingrédiants
-
-Sinon, voici la description la complette de la base du site. égallement moment de reflexion sur comment commencer. bref. 
 
 Un utiliateur(client/administrateur) dois pouvoir naviguer sur le site
 le site dois posséder plusieurs "pages" 

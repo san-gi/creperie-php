@@ -16,7 +16,7 @@ class front
             $this->user = $this->renderer("../Src/Vue/userConnect.php");
         else
             $this->user = $this->renderer("../Src/Vue/userNoConnect.php");
-        $this->title = "salut";
+        $this->title = "Bienvenue !";
         $this->content = $this->renderer("../Src/Vue/home.php");
         $this->render = $this->renderer("../Src/Vue/template.php");
     }

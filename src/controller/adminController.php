@@ -49,6 +49,9 @@ class adminController
             case "/admin/ingrédients":
                 $this->table = $this->renderer("../Src/Vue/404.php");
                 break;
+            default:
+                $this->table = $this->renderer("../Src/Vue/404.php");
+                break;
         }
         if ($code == 1 && isset($_POST["submit"])) {
             if ($_POST["submit"] == "post") {
