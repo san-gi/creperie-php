@@ -4,7 +4,7 @@
 namespace App\Modéle;
 
 
-class factureManager
+class ingredientManager
 {
     public function setConnexion()
     {
@@ -24,7 +24,7 @@ class factureManager
         $result = array();
         if ($query->execute()) {
             foreach ($query as $row) {
-                $result[] = new commandes($row);
+                $result[] = new ingre($row);
             }
             return $result;
         }

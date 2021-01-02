@@ -4,7 +4,7 @@
 namespace App\Modéle;
 
 
-class factureManager
+class ingredient_crepesManager
 {
     public function setConnexion()
     {
@@ -19,12 +19,12 @@ class factureManager
     public function getAll()
     {
 
-        $request = 'select * from commandes';
+        $request = 'select * from ingCrepe';
         $query = $this->connexion->prepare($request);
         $result = array();
         if ($query->execute()) {
             foreach ($query as $row) {
-                $result[] = new commandes($row);
+                $result[] = new Ingredient_crepe($row);
             }
             return $result;
         }

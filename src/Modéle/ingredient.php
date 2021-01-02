@@ -1,6 +1,6 @@
 <?php
 namespace App\Modéle;
-class Ingrédiant
+class Ingredient
 {
     private $id;
     private $name;

@@ -20,3 +20,35 @@ create table category(
     name varchar(64),
     flag int
 );
+DROP TABLE IF EXISTS commandes;
+create table commandes
+(
+	id int not null auto_increment primary key,
+	crepe int,
+	facture int
+);
+
+DROP TABLE IF EXISTS facture;
+create table facture
+(
+	id int not null auto_increment primary key,
+	user int,
+	prix float,
+	date date
+);
+DROP TABLE IF EXISTS ingrediants;
+create table ingrediants
+(
+	id int not null auto_increment primary key ,
+	nom int,
+	price int
+);
+
+DROP TABLE IF EXISTS ingCrepe;
+create table ingCrepe
+(
+	id int not null auto_increment primary key ,
+	crepe int,
+	facture int
+);
+

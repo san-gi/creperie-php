@@ -1,10 +1,10 @@
 <?php
 namespace App\Modéle;
-class Ingrédiant
+class Ingredient_crepe
 {
     private $id;
     private $crepe;
-    private $ingrédiant;
+    private $ingredient;
 
     public function __construct(array $data)
     {
@@ -46,17 +46,17 @@ class Ingrédiant
     /**
      * @return mixed
      */
-    public function getIngrédiant()
+    public function getIngredient()
     {
-        return $this->ingrédiant;
+        return $this->ingredient;
     }
 
     /**
-     * @param mixed $ingrédiant
+     * @param mixed $ingredient
      */
-    public function setIngrédiant($ingrédiant)
+    public function setIngredient($ingrdient)
     {
-        $this->ingrédiant = $ingrédiant;
+        $this->ingredient = $ingredient;
     }
 
 

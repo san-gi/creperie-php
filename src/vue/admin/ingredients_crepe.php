@@ -3,9 +3,10 @@
     <tr>
         <th scope="col">id</th>
         <th scope="col">crepe</th>
-        <th scope="col">facture</th>
-        <th scope="col"></th>
+        <th scope="col">ingrédient</th>
 
+
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -13,7 +14,7 @@
         <form action="/api/user/post" method="post">
             <td>NEW</td>
             <td><input type="text" id="crepe" name="crepe" value=""></td>
-            <td><input type="text" id="facture" name="facture" value=""></td>
+            <td><input type="text" id="ingredient" name="ingredient" value=""></td>
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -24,12 +25,12 @@
 
         </form>
     </tr>
-    <?php foreach ($this->commandes as $c) : ?>
+    <?php foreach ($this->ingCrepe as $i) : ?>
         <tr>
             <form action="/api/edit" method="post">
-                <td><?= $c->getId() ?></td>
-                <td><?= $c->getFacture() ?></td>
-                <td><?= $c->getCrepe() ?></td>
+                <td><?= $i->getId() ?></td>
+                <td><input type="text" id="crepe" name="crepe" value="<?= $i->getCrepe() ?>"></td>
+                <td><input type="text" id="ingredient" name="ingredient" value="<?= $i->getIngredient() ?>"></td>
 
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
@@ -41,6 +42,7 @@
                             </button>
                         </div>
                     </div></td>
+
             </form>
         </tr>
     <?php endforeach ?>

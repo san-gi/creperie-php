@@ -2,9 +2,13 @@
 
 namespace App\controller;
 
+use App\Modéle\commandesManager;
 use App\Modéle\CrepeManager;
 
 use App\Modéle\Crepe;
+use App\Modéle\factureManager;
+use App\Modéle\ingredient_crepesManager;
+use App\Modéle\ingredientManager;
 use App\Modéle\userManager;
 
 class adminController
@@ -18,6 +22,12 @@ class adminController
     public $users;
     public $commandesManager;
     public $commandes;
+    public $ingredients;
+    public $ingredientManager;
+    public $factures;
+    public $factureManager;
+    public $ingCrepe;
+    public $ingCrepeManager;
     public $table;
     public $user;
 
@@ -44,15 +54,27 @@ class adminController
                 $this->table = $this->renderer("../Src/Vue/admin/users.php");
                 break;
             case "/admin/commandes":
+                $this->commandesManager = new commandesManager();
+                $this->commandesManager->setConnexion();
+                $this->commandes = $this->commandesManager->getAll();
                 $this->table = $this->renderer("../Src/Vue/admin/commandes.php");
                 break;
-            case "/admin/ingrédients":
-                $this->table = $this->renderer("../Src/Vue/admin/ingrédiants.php");
+            case "/admin/ingredients":
+                $this->ingredientManager = new ingredientManager();
+                $this->ingredientManager->setConnexion();
+                $this->ingredients = $this->ingredientManager->getAll();
+                $this->table = $this->renderer("../Src/Vue/admin/ingredients.php");
                 break;
-            case "/admin/Ingrédiants_crepe":
-                $this->table = $this->renderer("../Src/Vue/admin/Ingrédiants_crepe.php");
+            case "/admin/ingredients_crepe":
+                $this->ingCrepeManager = new ingredient_crepesManager();
+                $this->ingCrepeManager->setConnexion();
+                $this->ingCrepe = $this->ingCrepeManager->getAll();
+                $this->table = $this->renderer("../Src/Vue/admin/ingredients_crepe.php");
                 break;
             case "/admin/facture":
+                $this->factureManager = new factureManager();
+                $this->factureManager->setConnexion();
+                $this->factures = $this->factureManager->getAll();
                 $this->table = $this->renderer("../Src/Vue/admin/facture.php");
                 break;
             default:

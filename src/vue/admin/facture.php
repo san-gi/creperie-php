@@ -2,18 +2,19 @@
     <thead>
     <tr>
         <th scope="col">id</th>
-        <th scope="col">crepe</th>
-        <th scope="col">facture</th>
+        <th scope="col">user</th>
+        <th scope="col">price</th>
+        <th scope="col">date</th>
         <th scope="col"></th>
-
     </tr>
     </thead>
     <tbody>
     <tr>
         <form action="/api/user/post" method="post">
             <td>NEW</td>
-            <td><input type="text" id="crepe" name="crepe" value=""></td>
-            <td><input type="text" id="facture" name="facture" value=""></td>
+            <td><input type="text" id="user" name="user" value=""></td>
+            <td><input type="text" id="price" name="price" value=""></td>
+            <td><input type="text" id="date" name="date" value=""></td>
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -24,12 +25,13 @@
 
         </form>
     </tr>
-    <?php foreach ($this->commandes as $c) : ?>
+    <?php foreach ($this->factures as $f) : ?>
         <tr>
             <form action="/api/edit" method="post">
-                <td><?= $c->getId() ?></td>
-                <td><?= $c->getFacture() ?></td>
-                <td><?= $c->getCrepe() ?></td>
+                <td><?= $u->getId() ?></td>
+                <td><input type="text" id="username" name="username" value="<?= $u->getUser() ?>"></td>
+                <td><input type="text" id="password" name="password" value="<?= $u->getPrice() ?>"></td>
+                <td><input type="text" id="mail" name="mail" value="<?= $u->getDate() ?>"></td>
 
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
@@ -41,6 +43,7 @@
                             </button>
                         </div>
                     </div></td>
+
             </form>
         </tr>
     <?php endforeach ?>
