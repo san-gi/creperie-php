@@ -1,10 +1,9 @@
-# projet de creperie 3.0
+Hello, Donc. 
 
 Ceci est le projet de réalisation d'un site pour une créperie.
 
 Le principe est de permettre aux client de choisir quoi mettre dans sa crêpe, s'il veux commander, 
 manger sur place ou emporter... ect. Bref, en écrivant, ça ressemble pas mal au interface de commande de type fastfood...
-
 
 edit du 2 janvier 2020 sur la structure de la base de donnée (on verra si on a le temps pour les truc en plus, c'est partie pour un sacré rush)
 
@@ -51,8 +50,6 @@ facture : un assemnlage des truc commander
 
 
 
-
-
 User story : 
     client : 
         * Un client dois pouvoir voir les crepes
@@ -63,13 +60,14 @@ User story :
     admin : 
         * un administrateur dois pouvoir gérer les crépes préentes (ajout/suppression)
         * un administrateur dois pouvoir gérer les clients
+
+Le principe est de permettre aux client de choisir quoi mettre dans sa crêpe, s'il veux commander, manger sur place ou emporter... ect. Bref, en écrivant, ça ressemble pas mal au interface de commande de type fastfood...
+
 Pour changer un peu ce principe morne, je vais sans doute ajouter quelques fonctionalités, présenter ici sous forme d'user story.
 
-* Un client dois pouvoir réaliser sa crépes (select ingrédiants)
-* Un client dois pouvoir faire la demande d'ajout d'un ingrediant
-* Un client dois pouvoir voir les retour d'autre client vis a vis d'un mélange spécifique
-* Un client régulier dois avoir des réductions.
-* un administrateur dois pouvoir gérer les ingrédiants
+Un client dois pouvoir faire la demande d'ajout d'un ingrediant
+Un client dois pouvoir voir les retour d'autre client vis a vis d'un mélange spécifique
+Un client régulier dois avoir des réductions.
 
 Un utiliateur(client/administrateur) dois pouvoir naviguer sur le site
 le site dois posséder plusieurs "pages" 
@@ -96,7 +94,3 @@ La base de donnée sera composer de :
             son prix
             sa popularité (% de toutes les crèpes avec l'ingrediant)
             son apréciabilité(?) étant la note moyenne de toutes les crèpes avec cet ingrédiants
-
-
-La base de donnée utiliser est héberger par moi même a l'adresse sangi.ddns.net 
-tournant sous la distribution 10.1.45-MariaDB
