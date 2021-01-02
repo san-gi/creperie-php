@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="album py-5 bg-dark">
     <div class="container">
 
@@ -56,5 +56,3 @@
 
     </div>
 </div>
-=======
->>>>>>> 6ea5c1c6a04b85bf3bba0deedb511451a334ec02

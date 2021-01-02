@@ -44,10 +44,16 @@ class adminController
                 $this->table = $this->renderer("../Src/Vue/admin/users.php");
                 break;
             case "/admin/commandes":
-                $this->table = $this->renderer("../Src/Vue/404.php");
+                $this->table = $this->renderer("../Src/Vue/admin/commandes.php");
                 break;
             case "/admin/ingrédients":
-                $this->table = $this->renderer("../Src/Vue/404.php");
+                $this->table = $this->renderer("../Src/Vue/admin/ingrédiants.php");
+                break;
+            case "/admin/Ingrédiants_crepe":
+                $this->table = $this->renderer("../Src/Vue/admin/Ingrédiants_crepe.php");
+                break;
+            case "/admin/facture":
+                $this->table = $this->renderer("../Src/Vue/admin/facture.php");
                 break;
             default:
                 $this->table = $this->renderer("../Src/Vue/404.php");

@@ -7,6 +7,8 @@
                     <li><a href="/admin/crepes" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crepes</a></br></li>
                     <li><a href="/admin/user" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Users</a></br></li>
                     <li><a href="/admin/commandes" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Commandes</a></br></li>
+                    <li><a href="/admin/ingrédiants_crepe" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">IngCrepe</a></br></li>
+                    <li><a href="/admin/facture" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Facture</a></br></li>
                     <li> <a href="/admin/ingrédients" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ingrédients</a></li>
                 </ul>
 
