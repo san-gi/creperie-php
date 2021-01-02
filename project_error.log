@@ -1,0 +1,4 @@
+[Fri Jan 01 21:14:14.457232 2021] [core:error] [pid 8592:tid 1256] (20023)The given path was above the root path: [client 192.168.1.10:49762] AH00127: Cannot map GET / HTTP/1.1 to file
+[Fri Jan 01 21:15:37.817222 2021] [core:error] [pid 45180:tid 1256] (20023)The given path was above the root path: [client 192.168.1.10:49812] AH00127: Cannot map GET / HTTP/1.1 to file
+[Fri Jan 01 21:17:11.899681 2021] [core:error] [pid 24388:tid 1224] (20023)The given path was above the root path: [client 192.168.1.10:49954] AH00127: Cannot map GET / HTTP/1.1 to file
+[Fri Jan 01 21:17:36.242663 2021] [core:error] [pid 45832:tid 1224] (20023)The given path was above the root path: [client 192.168.1.10:49970] AH00127: Cannot map GET / HTTP/1.1 to file
