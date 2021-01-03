@@ -2,6 +2,7 @@
 
 namespace App\controller;
 
+use App\Modéle\commandes;
 use App\Modéle\commandesManager;
 use App\Modéle\Crepe;
 use App\Modéle\CrepeManager;
@@ -38,10 +39,24 @@ class api{
                     $this->commandesManager->setConnexion();
                     switch ($_POST["submit"]){
                         case  "post":
+                            $c = new commandes([
+                                "crepe" => $_POST["crepe"],
+                                "facture" => $_POST["facture"]
+                            ]);
+                            $this->commandesManager->add($c);
                             break;
                         case  "edit":
+                            $c = new commandes([
+                                "crepe" => $_POST["crepe"],
+                                "facture" => $_POST["facture"],
+                                "id" => $_POST["id"],
+                            ]);
+                            $this->commandesManager->update($c);
                             break;
                         case  "delete":
+                            var_dump($_POST["id"]);
+                            $a = $this->commandesManager->get($_POST["id"]);
+                            $this->commandesManager->delete($a);
                             break;
                     }
                     break;

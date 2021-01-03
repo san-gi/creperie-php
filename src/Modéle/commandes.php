@@ -28,7 +28,7 @@ class commandes
     }
     public function getCrepe()
     {
-        return $this->id;
+        return $this->crepe;
     }
     public function setFacture($f)
     {

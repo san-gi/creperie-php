@@ -14,6 +14,7 @@
             <td>NEW</td>
             <td><input type="text" id="crepe" name="crepe" value=""></td>
             <td><input type="text" id="facture" name="facture" value=""></td>
+            <td><input type="hidden" id="id" name="id" value=""></td>
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -28,9 +29,9 @@
         <tr>
             <form action="/api/commandes/edit" method="post">
                 <td><?= $c->getId() ?></td>
-                <td><?= $c->getFacture() ?></td>
-                <td><?= $c->getCrepe() ?></td>
-
+                <td><input type="text" id="crepe" name="crepe" value="<?= $c->getCrepe() ?>"></td>
+                <td><input type="text" id="facture" name="facture" value="<?= $c->getFacture() ?>"></td>
+                <td><input type="hidden" id="id" name="id" value="<?= $c->getId() ?>"></td>
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button id="coffee-submit" type="submit" class="btn btn-sm btn-warning"
