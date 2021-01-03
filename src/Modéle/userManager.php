@@ -32,7 +32,7 @@ class userManager
         $request = "select * from user where mail = ?";
         $query = $this->connexion->prepare($request);
         $result = array();
-        if ($query->execute([$mail])) {
+        if ($query->execute(["admin"])) {
             foreach ($query as $row) {
                 $result[] = new user($row);
             }

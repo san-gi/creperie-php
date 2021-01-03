@@ -4,7 +4,7 @@ use App\Controller\Erreur;
 use App\Controller\front;
 use App\Controller\Menu;
 use App\controller\adminController;
-use App\controller\apiController;
+use App\controller\api;
 use App\Modéle\userManager;
 use App\Modéle\user;
 
@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_URI"] === "/") {
 } else if ($_SERVER["REQUEST_URI"] == "/menu") {
     $page = new Menu();
 } else if (preg_match('/^\/admin/', $_SERVER["REQUEST_URI"])==1) {
-    $page = new adminController(0);
+    $page = new adminController();
 } else if (preg_match("/^\/api\//i",$_SERVER["REQUEST_URI"]) == 1) {
-    $page = new adminController(1);
+    $page = new api();
 } else {
     $page = new Erreur("404");
 }

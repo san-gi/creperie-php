@@ -31,7 +31,7 @@ class adminController
     public $table;
     public $user;
 
-    public function __construct($code)
+    public function __construct()
     {
         if(isset($_SESSION["user"]))
             $this->user = $this->renderer("../Src/Vue/userConnect.php");
@@ -81,17 +81,23 @@ class adminController
                 $this->table = $this->renderer("../Src/Vue/404.php");
                 break;
         }
-        if ($code == 1 && isset($_POST["submit"])) {
+        if ("oui" == 1 && isset($_POST["submit"])) {
             if ($_POST["submit"] == "post") {
                 $a = new Crepe(["name" => $_POST["name"],
                     "type" => "1",
-                    "img" => $_POST["img"]]);
+                    "img" => $_POST["img"],
+                    "desc" => $_POST["desc"],
+                    "price" => "price"]);
                 $this->crepeManager->add($a);
             } else if ($_POST["submit"] == "edit") {
-                $a = new Crepe(["name" => $_POST["name"],
+                $a = new Crepe([
+                    "name" => $_POST["name"],
+                    "price" => "price",
                     "type" => "1",
                     "img" => $_POST["img"],
-                    "id" => $_POST["id"]]);
+                    "id" => $_POST["id"],
+                    "desc" => $_POST["desc"]]);
+                var_dump($a);
                 $this->crepeManager->update($a);
             } else if ($_POST["submit"] == "delete") {
                 $a = $this->crepeManager->get($_POST["id"]);

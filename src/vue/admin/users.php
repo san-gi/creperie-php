@@ -13,7 +13,7 @@
     </thead>
     <tbody>
     <tr>
-        <form action="/api/user/post" method="post">
+        <form action="/api/users/post" method="post">
             <td>NEW</td>
             <td><input type="text" id="username" name="username" value=""></td>
             <td><input type="text" id="password" name="password" value=""></td>
@@ -35,7 +35,7 @@
     </tr>
     <?php foreach ($this->users as $u) : ?>
         <tr>
-            <form action="/api/edit" method="post">
+            <form action="/api/users/edit" method="post">
                 <td><?= $u->getId() ?></td>
                 <td><input type="text" id="username" name="username" value="<?= $u->getUsername() ?>"></td>
                 <td><input type="text" id="password" name="password" value="<?= $u->getPassword() ?>"></td>

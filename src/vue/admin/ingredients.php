@@ -10,7 +10,7 @@
     </thead>
     <tbody>
     <tr>
-        <form action="/api/user/post" method="post">
+        <form action="/api/ingredients/post" method="post">
             <td>NEW</td>
             <td><input type="text" id="name" name="name" value=""></td>
             <td><input type="text" id="price" name="price" value=""></td>
@@ -26,7 +26,7 @@
     </tr>
     <?php foreach ($this->ingredients as $i) : ?>
         <tr>
-            <form action="/api/edit" method="post">
+            <form action="/api/ingredients/edit" method="post">
                 <td><?= $u->getId() ?></td>
                 <td><input type="text" id="username" name="username" value="<?= $u->getName() ?>"></td>
                 <td><input type="text" id="password" name="password" value="<?= $u->getPrice() ?>"></td>

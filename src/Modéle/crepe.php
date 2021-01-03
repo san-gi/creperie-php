@@ -47,7 +47,7 @@ class Crepe
     }
     public function setPrice($p)
     {
-        $this->img = $p;
+        $this->price = $p;
     }
     public function getPrice()
     {

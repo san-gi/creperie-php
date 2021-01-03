@@ -11,7 +11,7 @@
     </thead>
     <tbody>
     <tr>
-        <form action="/api/user/post" method="post">
+        <form action="/api/ingcrepes/post" method="post">
             <td>NEW</td>
             <td><input type="text" id="crepe" name="crepe" value=""></td>
             <td><input type="text" id="ingredient" name="ingredient" value=""></td>
@@ -27,7 +27,7 @@
     </tr>
     <?php foreach ($this->ingCrepe as $i) : ?>
         <tr>
-            <form action="/api/edit" method="post">
+            <form action="/api/ingcrepes/edit" method="post">
                 <td><?= $i->getId() ?></td>
                 <td><input type="text" id="crepe" name="crepe" value="<?= $i->getCrepe() ?>"></td>
                 <td><input type="text" id="ingredient" name="ingredient" value="<?= $i->getIngredient() ?>"></td>

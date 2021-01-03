@@ -10,7 +10,7 @@
     </thead>
     <tbody>
     <tr>
-        <form action="/api/user/post" method="post">
+        <form action="/api/commandes/post" method="post">
             <td>NEW</td>
             <td><input type="text" id="crepe" name="crepe" value=""></td>
             <td><input type="text" id="facture" name="facture" value=""></td>
@@ -26,7 +26,7 @@
     </tr>
     <?php foreach ($this->commandes as $c) : ?>
         <tr>
-            <form action="/api/edit" method="post">
+            <form action="/api/commandes/edit" method="post">
                 <td><?= $c->getId() ?></td>
                 <td><?= $c->getFacture() ?></td>
                 <td><?= $c->getCrepe() ?></td>
