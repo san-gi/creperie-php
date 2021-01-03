@@ -6,7 +6,9 @@ use App\Modéle\commandes;
 use App\Modéle\commandesManager;
 use App\Modéle\Crepe;
 use App\Modéle\CrepeManager;
+use App\Modéle\Facture;
 use App\Modéle\factureManager;
+use App\Modéle\Ingredient;
 use App\Modéle\ingredient_crepesManager;
 use App\Modéle\ingredientManager;
 use App\Modéle\Ingredient_crepe;
@@ -55,7 +57,6 @@ class api{
                             $this->commandesManager->update($c);
                             break;
                         case  "delete":
-                            var_dump($_POST["id"]);
                             $a = $this->commandesManager->get($_POST["id"]);
                             $this->commandesManager->delete($a);
                             break;
@@ -146,15 +147,31 @@ class api{
                             break;
                     }
                     break;
-                case "factures":
+                case "facture":
                     $this->factureManager = new factureManager();
                     $this->factureManager->setConnexion();
                     switch ($_POST["submit"]){
                         case  "post":
+                            $c = new Facture([
+                                "user" => $_POST["user"],
+                                "price" => $_POST["price"],
+                                "date" => $_POST["date"]
+                            ]);
+                            $this->factureManager->add($c);
                             break;
                         case  "edit":
+                            $c = new Facture([
+                                "user" => $_POST["user"],
+                                "price" => $_POST["price"],
+                                "date" => $_POST["date"],
+                                "id" => $_POST["id"]
+                            ]);
+
+                            $this->factureManager->update($c);
                             break;
                         case  "delete":
+                            $a = $this->factureManager->get($_POST["id"]);
+                            $this->factureManager->delete($a);
                             break;
                     }
                     break;
@@ -163,35 +180,31 @@ class api{
                     $this->ingredientManager->setConnexion();
                     switch ($_POST["submit"]){
                         case  "post":
+
+                            $c = new Ingredient([
+                                "name" => $_POST["name"],
+                                "price" => $_POST["price"]
+                            ]);
+                            $this->ingredientManager->add($c);
                             break;
                         case  "edit":
+                            $c = new Ingredient([
+                                "name" => $_POST["name"],
+                                "price" => $_POST["price"],
+                                "id" => $_POST["id"],
+                            ]);
+                            $this->ingredientManager->update($c);
                             break;
                         case  "delete":
+                            $a = $this->ingredientManager->get($_POST["id"]);
+                            $this->ingredientManager->delete($a);
                             break;
                     }
                     break;
             }
         }
-        var_dump($_POST);
-        header("Location: /admin/$url[2]");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //header("Location: /admin/$url[2]");
         $this->title = "salut";
         $this->content = $this->renderer("../Src/Vue/404.php");
         $this->render = $this->renderer("../Src/Vue/template.php");

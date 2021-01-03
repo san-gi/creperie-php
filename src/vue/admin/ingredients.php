@@ -14,6 +14,7 @@
             <td>NEW</td>
             <td><input type="text" id="name" name="name" value=""></td>
             <td><input type="text" id="price" name="price" value=""></td>
+            <td><input type="hidden" id="id" name="id" value=""></td>
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -27,9 +28,10 @@
     <?php foreach ($this->ingredients as $i) : ?>
         <tr>
             <form action="/api/ingredients/edit" method="post">
-                <td><?= $u->getId() ?></td>
-                <td><input type="text" id="username" name="username" value="<?= $u->getName() ?>"></td>
-                <td><input type="text" id="password" name="password" value="<?= $u->getPrice() ?>"></td>
+                <td><?= $i->getId() ?></td>
+                <td><input type="text" id="name" name="name" value="<?= $i->getName() ?>"></td>
+                <td><input type="text" id="price" name="price" value="<?= $i->getPrice() ?>"></td>
+                <td><input type="hidden" id="id" name="id" value="<?= $i->getId() ?>"></td>
 
 
 

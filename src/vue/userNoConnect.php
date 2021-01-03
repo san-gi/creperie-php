@@ -1,6 +1,5 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalConnect" data-whatever="@mdo">Se connecter </button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCreerCompte" data-whatever="@fat">Créer un compte</button>
-
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalConnect" >Se connecter </button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCreerCompte">Créer un compte</button>
 <div class="modal fade" id="ModalConnect" tabindex="-1" role="dialog" aria-labelledby="ModalConnectLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -14,6 +13,7 @@
 
             <form action="<?= $_SERVER["REQUEST_URI"] ?>" method="post">
                 <div class="modal-body">
+                    <input type="hidden" class="form-control" id="userConnect"  name="userConnect">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Ientifiant (mail)</label>
                         <input type="text" class="form-control" id="mail" name="mail">
@@ -43,7 +43,7 @@
 
             <form action="<?= $_SERVER["REQUEST_URI"] ?>" method="post">
                 <div class="modal-body">
-
+                    <input type="hidden" class="form-control" id="userConnect"  name="userConnect">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Username</label>
                         <input type="text" class="form-control" id="username"  name="username">

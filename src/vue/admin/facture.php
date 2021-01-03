@@ -6,6 +6,7 @@
         <th scope="col">price</th>
         <th scope="col">date</th>
         <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
             <td><input type="text" id="user" name="user" value=""></td>
             <td><input type="text" id="price" name="price" value=""></td>
             <td><input type="text" id="date" name="date" value=""></td>
+            <td><input type="hidden" id="id" name="id" value=""></td>
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -29,10 +31,10 @@
         <tr>
             <form action="/api/facture/edit" method="post">
                 <td><?= $f->getId() ?></td>
-                <td><input type="text" id="username" name="username" value="<?= $f->getUser() ?>"></td>
-                <td><input type="text" id="password" name="password" value="<?= $f->getPrice() ?>"></td>
-                <td><input type="text" id="mail" name="mail" value="<?= $f->getDate() ?>"></td>
-
+                <td><input type="text" id="user" name="user" value="<?= $f->getUser() ?>"></td>
+                <td><input type="text" id="price" name="price" value="<?= $f->getPrice() ?>"></td>
+                <td><input type="text" id="date" name="date" value="<?= $f->getDate() ?>"></td>
+                <td><input type="hidden" id="id" name="id" value="<?= $f->getId() ?>"></td>
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button id="coffee-submit" type="submit" class="btn btn-sm btn-warning"

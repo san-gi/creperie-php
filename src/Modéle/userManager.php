@@ -23,7 +23,6 @@ class userManager
     }
     public function add(User $p)
     {
-        var_dump($p);
         $query = $this->connexion->prepare("INSERT INTO user (username, password, mail,img,role) values (?, ?, ?, ?, ?)");
         $query->execute([$p->getUsername(), $p->getPassword(), $p->getMail(),$p->getImg(),$p->getRole()]);
     }
@@ -63,7 +62,6 @@ class userManager
 
     public function update(User $p)
     {
-        var_dump($p->getUsername(), $p->getPassword(), $p->getMail(), $p->getImg(),$p->getRole(),$p->getId());
         $query = $this->connexion->prepare("UPDATE user set username = ?, password = ?, mail = ?,img = ?, role = ? where id = ? ");
         $query->execute([$p->getUsername(), $p->getPassword(), $p->getMail(), $p->getImg(),$p->getRole(),$p->getId()]);
 

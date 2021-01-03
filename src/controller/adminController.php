@@ -33,10 +33,15 @@ class adminController
 
     public function __construct()
     {
-        if(isset($_SESSION["user"]))
+
+        if(isset($_SESSION["user"])){
+
             $this->user = $this->renderer("../Src/Vue/userConnect.php");
-        else
+        }
+        else {
+            var_dump("oui");
             $this->user = $this->renderer("../Src/Vue/userNoConnect.php");
+        }
         $this->title = "admin";
 
 
@@ -81,32 +86,6 @@ class adminController
                 $this->table = $this->renderer("../Src/Vue/404.php");
                 break;
         }
-        if ("oui" == 1 && isset($_POST["submit"])) {
-            if ($_POST["submit"] == "post") {
-
-                $a = new Crepe([
-                    "name" => $_POST["name"],
-                    "type" => "1",
-                    "img" => $_POST["img"],
-                    "desc" => $_POST["desc"],
-                    "price" => "price"]);
-                $this->crepeManager->add($a);
-            } else if ($_POST["submit"] == "edit") {
-                $a = new Crepe([
-                    "name" => $_POST["name"],
-                    "price" => "price",
-                    "type" => "1",
-                    "img" => $_POST["img"],
-                    "id" => $_POST["id"],
-                    "desc" => $_POST["desc"]]);
-                $this->crepeManager->update($a);
-            } else if ($_POST["submit"] == "delete") {
-                $a = $this->crepeManager->get($_POST["id"]);
-                $this->crepeManager->delete($a);
-            }
-        }
-
-
         $this->content = $this->renderer("../Src/Vue/admin/menu.php");
         $this->render = $this->renderer("../Src/Vue/template.php");
     }

@@ -5,7 +5,7 @@
         <th scope="col">crepe</th>
         <th scope="col">ingrédient</th>
 
-
+        <th scope="col"></th>
         <th scope="col"></th>
     </tr>
     </thead>
