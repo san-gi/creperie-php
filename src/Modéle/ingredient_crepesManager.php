@@ -30,6 +30,20 @@ class ingredient_crepesManager
         }
 
     }
+    public function getAllForCrepe($crepeID)
+    {
+
+        $request = 'select * from ingCrepe where crepe =?';
+        $query = $this->connexion->prepare($request);
+        $result = array();
+        if ($query->execute([$crepeID])) {
+            foreach ($query as $row) {
+                $result[] = new Ingredient_crepe($row);
+            }
+            return $result;
+        }
+
+    }
     public function add(Ingredient_crepe $p)
     {
         $query = $this->connexion->prepare("INSERT INTO ingCrepe (crepe, ingredient) values ( ?, ?)");

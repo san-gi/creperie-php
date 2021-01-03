@@ -9,6 +9,7 @@ use App\Modéle\Crepe;
 use App\Modéle\factureManager;
 use App\Modéle\ingredient_crepesManager;
 use App\Modéle\ingredientManager;
+use App\Modéle\user;
 use App\Modéle\userManager;
 
 class adminController
@@ -33,14 +34,15 @@ class adminController
 
     public function __construct()
     {
-
+        $this->userManager = new userManager();
         if(isset($_SESSION["user"])){
-
             $this->user = $this->renderer("../Src/Vue/userConnect.php");
+            if(!$_SESSION["user"]->getRole()=="admin"){
+                header("Location: /");
+            }
         }
         else {
-            var_dump("oui");
-            $this->user = $this->renderer("../Src/Vue/userNoConnect.php");
+            header("Location: /");
         }
         $this->title = "admin";
 

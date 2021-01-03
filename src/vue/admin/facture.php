@@ -16,7 +16,13 @@
             <td><input type="text" id="user" name="user" value=""></td>
             <td><input type="text" id="price" name="price" value=""></td>
             <td><input type="text" id="date" name="date" value=""></td>
+            <td> <select class="w3-select" name="role">
+                    <option value="clos">Clos</option>
+                    <option value="Livraison en cours">Livraison en cours</option>
+                    <option value="Non valider">Non valider</option>
+                </select> </td>
             <td><input type="hidden" id="id" name="id" value=""></td>
+
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -34,6 +40,12 @@
                 <td><input type="text" id="user" name="user" value="<?= $f->getUser() ?>"></td>
                 <td><input type="text" id="price" name="price" value="<?= $f->getPrice() ?>"></td>
                 <td><input type="text" id="date" name="date" value="<?= $f->getDate() ?>"></td>
+                <td> <select class="w3-select" name="role">
+                        <option value=""><?=($f->getEtat())?></option>
+                        <option value="clos">Clos</option>
+                        <option value="Livraison en cours">Livraison en cours</option>
+                        <option value="Non valider">Non valider</option>
+                    </select> </td>
                 <td><input type="hidden" id="id" name="id" value="<?= $f->getId() ?>"></td>
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">

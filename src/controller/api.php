@@ -155,7 +155,8 @@ class api{
                             $c = new Facture([
                                 "user" => $_POST["user"],
                                 "price" => $_POST["price"],
-                                "date" => $_POST["date"]
+                                "date" => $_POST["date"],
+                                "etat" => $_POST["etat"],
                             ]);
                             $this->factureManager->add($c);
                             break;
@@ -164,7 +165,8 @@ class api{
                                 "user" => $_POST["user"],
                                 "price" => $_POST["price"],
                                 "date" => $_POST["date"],
-                                "id" => $_POST["id"]
+                                "id" => $_POST["id"],
+                                "etat" => $_POST["etat"],
                             ]);
 
                             $this->factureManager->update($c);
@@ -204,8 +206,8 @@ class api{
             }
         }
 
-        //header("Location: /admin/$url[2]");
-        $this->title = "salut";
+        header("Location: /admin/$url[2]");
+        $this->title = "api";
         $this->content = $this->renderer("../Src/Vue/404.php");
         $this->render = $this->renderer("../Src/Vue/template.php");
     }

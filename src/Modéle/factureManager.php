@@ -25,7 +25,9 @@ class factureManager
         if ($query->execute()) {
             foreach ($query as $row) {
                 $result[] = new Facture($row);
+
             }
+
             return $result;
         }
 

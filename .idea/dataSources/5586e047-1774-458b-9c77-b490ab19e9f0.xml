@@ -835,7 +835,7 @@ ALL PRIVILEGES|crepe:null
     </column>
     <column id="263" parent="256" name="crepe">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(64)|0s</DataType>
     </column>
     <column id="264" parent="256" name="facture">
       <Position>3</Position>
@@ -868,106 +868,137 @@ ALL PRIVILEGES|crepe:null
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="271" parent="257" name="description">
+    <column id="271" parent="257" name="desc">
       <Position>6</Position>
-      <DataType>varchar(64)|0s</DataType>
+      <DataType>text|0s</DataType>
     </column>
-    <key id="272" parent="257" name="PRIMARY">
+    <index id="272" parent="257" name="crepe_name_uindex">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="273" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="273" parent="258" name="id">
+    <key id="274" parent="257" name="crepe_name_uindex">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>crepe_name_uindex</UnderlyingIndexName>
+    </key>
+    <column id="275" parent="258" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="274" parent="258" name="user">
+    <column id="276" parent="258" name="user">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(64)|0s</DataType>
     </column>
-    <column id="275" parent="258" name="price">
+    <column id="277" parent="258" name="price">
       <Position>3</Position>
       <DataType>float|0s</DataType>
     </column>
-    <column id="276" parent="258" name="date">
+    <column id="278" parent="258" name="date">
       <Position>4</Position>
       <DataType>date|0s</DataType>
     </column>
-    <key id="277" parent="258" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="278" parent="259" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="279" parent="259" name="crepe">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-    </column>
-    <column id="280" parent="259" name="ingredient">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-    </column>
-    <key id="281" parent="259" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="282" parent="260" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="283" parent="260" name="name">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-    </column>
-    <column id="284" parent="260" name="price">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-    </column>
-    <key id="285" parent="260" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="286" parent="261" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="287" parent="261" name="username">
-      <Position>2</Position>
-      <DataType>varchar(64)|0s</DataType>
-    </column>
-    <column id="288" parent="261" name="password">
-      <Position>3</Position>
-      <DataType>varchar(64)|0s</DataType>
-    </column>
-    <column id="289" parent="261" name="mail">
-      <Position>4</Position>
-      <DataType>varchar(64)|0s</DataType>
-    </column>
-    <column id="290" parent="261" name="img">
+    <column id="279" parent="258" name="etat">
       <Position>5</Position>
       <DataType>varchar(64)|0s</DataType>
     </column>
-    <column id="291" parent="261" name="role">
-      <Position>6</Position>
-      <DataType>varchar(64)|0s</DataType>
-    </column>
-    <key id="292" parent="261" name="PRIMARY">
+    <key id="280" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
+    </key>
+    <column id="281" parent="259" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="282" parent="259" name="crepe">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="283" parent="259" name="ingredient">
+      <Position>3</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <key id="284" parent="259" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="285" parent="260" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="286" parent="260" name="name">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="287" parent="260" name="price">
+      <Position>3</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <index id="288" parent="260" name="ingrediants_name_uindex">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="289" parent="260" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="290" parent="260" name="ingrediants_name_uindex">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>ingrediants_name_uindex</UnderlyingIndexName>
+    </key>
+    <column id="291" parent="261" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="292" parent="261" name="username">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="293" parent="261" name="password">
+      <Position>3</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="294" parent="261" name="mail">
+      <Position>4</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="295" parent="261" name="img">
+      <Position>5</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="296" parent="261" name="role">
+      <Position>6</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <index id="297" parent="261" name="user_mail_uindex">
+      <ColNames>mail</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="298" parent="261" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="299" parent="261" name="user_mail_uindex">
+      <ColNames>mail</ColNames>
+      <UnderlyingIndexName>user_mail_uindex</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

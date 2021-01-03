@@ -56,6 +56,19 @@ class CrepeManager
         }
     }
 
+    public function getByNAme($name)
+    {
+        $request = "select * from crepe where name = ?";
+        $query = $this->connexion->prepare($request);
+        $result = array();
+        if ($query->execute([$name])) {
+            foreach ($query as $row) {
+                $result[] = new Crepe($row);
+            }
+            return $result[0];
+        }
+    }
+
     public function delete(Crepe $c)
     {
 

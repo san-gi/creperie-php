@@ -8,7 +8,8 @@
                     <div class="card mb-4 shadow-sm">
                         <img src="/img/<?=$c->getImg()?>" class="card-img-top" alt="erreur dans le chargement de l'image">
                         <div class="card-body">
-                            <p class="card-text"><?= $c->getName() ?></p>
+
+
                             <div class="d-flex justify-content-between align-items-center">
 
                                 <!-- Button trigger modal -->
@@ -28,7 +29,12 @@
                                             </div>
                                             <form action="<?= $_SERVER["REQUEST_URI"]?>" method="post">
                                                 <div class="modal-body">
-                                                    <p>blabla descriptif</p>
+                                                    <p><?= $c->getDesc() ?></p>
+                                                    <?php foreach ($this->ingredientManager->getAllForCrepe($c->getID())as $i) : ?>
+                                                        <button type="button" class="btn btn-lg btn-primary" disabled><?= $i->getIngredient() ?></button>
+
+                                                    <?php endforeach ?>
+
                                                     <input type="hidden" name="crepeName" value="<?= $c->getName() ?>">
                                                     <!--<div class="form-group">
                                                         <label for="recipient-name" class="col-form-label">Ientifiant (mail)</label>

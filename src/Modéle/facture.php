@@ -6,6 +6,23 @@ class Facture
     private $user;
     private $date;
     private $price;
+    private $etat;
+
+    /**
+     * @return mixed
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
+     * @param mixed $etat
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+    }
 
     /**
      * @return mixed
