@@ -158,6 +158,7 @@ class api{
                                 "date" => $_POST["date"],
                                 "etat" => $_POST["etat"],
                             ]);
+
                             $this->factureManager->add($c);
                             break;
                         case  "edit":

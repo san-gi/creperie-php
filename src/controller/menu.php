@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Modéle\commandes;
+use App\Modéle\commandesManager;
 use App\Modéle\CrepeManager;
+use App\Modéle\factureManager;
 use App\Modéle\ingredient_crepesManager;
 use App\Modéle\ingredientManager;
 
@@ -13,35 +16,58 @@ class Menu
     public $render;
     public $crepeManager;
     public $ingredientManager;
+    public $factureManager;
     public $crepes;
     public $user;
+    public $commandManager;
     public $crepesCommand;
+    public $crepesInFacture;
+    public $facture;
+
 
     public function __construct()
     {
         $this->title = "salut";
         $this->crepeManager = new CrepeManager();
         $this->crepeManager->setConnexion();
-        $this->ingredientManager = new ingredient_crepesManager();
-        $this->ingredientManager->setConnexion();
         $this->crepes = $this->crepeManager->getAll();
 
-        if (!isset($_SESSION["commande"])) {
-            $_SESSION["commande"] = [];
-        }else{
-            foreach ($_SESSION["commande"] as $i){
-                $this->crepesCommand[] = $this->crepeManager->getByNAme($i);
+        $this->ingredientManager = new ingredient_crepesManager();
+        $this->ingredientManager->setConnexion();
+        $this->crepesInFacture = [];
+
+
+
+        if (isset($_SESSION["user"])) {
+
+            $this->factureManager = new factureManager();
+            $this->factureManager->setConnexion();
+            $this->facture = $this->factureManager->getFactureEnCours($_SESSION["user"]->getMail());
+
+            $this->commandManager = new commandesManager();
+            $this->commandManager->setConnexion();
+            $this->crepesCommand = $this->commandManager->getAllbyFacture($this->facture->getId());
+
+            foreach ($this->crepesCommand as $c){
+                $this->crepesInFacture[] = $this->crepeManager->getByNAme($c->getCrepe());
             }
-        }
+            if (isset($_POST["crepeName"])) {
 
-        if (isset($_POST["crepeName"])) {
-            $_SESSION["commande"][] = $_POST["crepeName"];
-        }
+                $this->crepesInFacture[] = $this->crepeManager->getByNAme($_POST["crepeName"]);
+                $this->commandManager->add(new commandes([
+                    "crepe" => $_POST["crepeName"],
+                    "facture" => $this->facture->getId()
+                ]));
+            }
 
-        if (isset($_SESSION["user"]))
             $this->user = $this->renderer("../Src/Vue/userConnect.php");
-        else
+        }
+        else{
             $this->user = $this->renderer("../Src/Vue/userNoConnect.php");
+        }
+
+
+
         $this->content = $this->renderer("../Src/Vue/menu.php");
         $this->render = $this->renderer("../Src/Vue/template.php");
         $this->crepesCommand = [];

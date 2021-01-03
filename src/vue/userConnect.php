@@ -27,7 +27,7 @@
                         <tbody>
 
 
-                    <?php foreach ($this->crepesCommand as $c) : ?>
+                    <?php foreach ($this->crepesInFacture as $c) : ?>
                         <tr>
                             <form action="/menu" method="post">
 

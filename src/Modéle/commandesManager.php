@@ -35,6 +35,17 @@ class commandesManager
         }
 
     }
+    public function getAllbyFacture($id){
+        $request = 'select * from commandes where facture = ?';
+        $query = $this->connexion->prepare($request);
+        $result = array();
+        if ($query->execute([$id])) {
+            foreach ($query as $row) {
+                $result[] = new commandes($row);
+            }
+            return $result;
+        }
+    }
     public function add(commandes $p)
     {
         $query = $this->connexion->prepare("INSERT INTO commandes (crepe, facture) values ( ?, ?)");

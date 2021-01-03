@@ -16,7 +16,7 @@
             <td><input type="text" id="user" name="user" value=""></td>
             <td><input type="text" id="price" name="price" value=""></td>
             <td><input type="text" id="date" name="date" value=""></td>
-            <td> <select class="w3-select" name="role">
+            <td> <select class="w3-select" name="etat">
                     <option value="clos">Clos</option>
                     <option value="Livraison en cours">Livraison en cours</option>
                     <option value="Non valider">Non valider</option>
@@ -40,7 +40,7 @@
                 <td><input type="text" id="user" name="user" value="<?= $f->getUser() ?>"></td>
                 <td><input type="text" id="price" name="price" value="<?= $f->getPrice() ?>"></td>
                 <td><input type="text" id="date" name="date" value="<?= $f->getDate() ?>"></td>
-                <td> <select class="w3-select" name="role">
+                <td> <select class="w3-select" name="etat">
                         <option value=""><?=($f->getEtat())?></option>
                         <option value="clos">Clos</option>
                         <option value="Livraison en cours">Livraison en cours</option>
