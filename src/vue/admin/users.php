@@ -13,16 +13,17 @@
     </thead>
     <tbody>
     <tr>
-        <form action="/api/users/post" method="post">
+        <form action="/api/user/post" method="post">
             <td>NEW</td>
             <td><input type="text" id="username" name="username" value=""></td>
             <td><input type="text" id="password" name="password" value=""></td>
             <td><input type="text" id="mail" name="mail" value=""></td>
             <td><input type="text" id="img" name="img" value=""></td>
-            <td> <select class="w3-select" name="option">
+            <td> <select class="w3-select" name="role">
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
                 </select> </td>
+            <td><input type="hidden" id="id" name="id" value=""></td>
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -35,17 +36,19 @@
     </tr>
     <?php foreach ($this->users as $u) : ?>
         <tr>
-            <form action="/api/users/edit" method="post">
+            <form action="/api/user/edit" method="post">
                 <td><?= $u->getId() ?></td>
+
                 <td><input type="text" id="username" name="username" value="<?= $u->getUsername() ?>"></td>
                 <td><input type="text" id="password" name="password" value="<?= $u->getPassword() ?>"></td>
                 <td><input type="text" id="mail" name="mail" value="<?= $u->getMail() ?>"></td>
                 <td><input type="text" id="img" name="img" value="<?= $u->getImg() ?>"></td>
-                <td> <select class="w3-select" name="option">
+                <td> <select class="w3-select" name="role">
                         <option value="<?= $u->getRole() ?>"><?= $u->getRole() ?></option>
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select> </td>
+                <td><input type="hidden" id="id" name="id" value="<?= $u->getId() ?>"></td>
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button id="coffee-submit" type="submit" class="btn btn-sm btn-warning"

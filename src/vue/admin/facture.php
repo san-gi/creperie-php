@@ -10,7 +10,7 @@
     </thead>
     <tbody>
     <tr>
-        <form action="/api/factures/post" method="post">
+        <form action="/api/facture/post" method="post">
             <td>NEW</td>
             <td><input type="text" id="user" name="user" value=""></td>
             <td><input type="text" id="price" name="price" value=""></td>
@@ -27,11 +27,11 @@
     </tr>
     <?php foreach ($this->factures as $f) : ?>
         <tr>
-            <form action="/api/factures/edit" method="post">
-                <td><?= $u->getId() ?></td>
-                <td><input type="text" id="username" name="username" value="<?= $u->getUser() ?>"></td>
-                <td><input type="text" id="password" name="password" value="<?= $u->getPrice() ?>"></td>
-                <td><input type="text" id="mail" name="mail" value="<?= $u->getDate() ?>"></td>
+            <form action="/api/facture/edit" method="post">
+                <td><?= $f->getId() ?></td>
+                <td><input type="text" id="username" name="username" value="<?= $f->getUser() ?>"></td>
+                <td><input type="text" id="password" name="password" value="<?= $f->getPrice() ?>"></td>
+                <td><input type="text" id="mail" name="mail" value="<?= $f->getDate() ?>"></td>
 
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">

@@ -83,7 +83,9 @@ class adminController
         }
         if ("oui" == 1 && isset($_POST["submit"])) {
             if ($_POST["submit"] == "post") {
-                $a = new Crepe(["name" => $_POST["name"],
+
+                $a = new Crepe([
+                    "name" => $_POST["name"],
                     "type" => "1",
                     "img" => $_POST["img"],
                     "desc" => $_POST["desc"],
@@ -97,7 +99,6 @@ class adminController
                     "img" => $_POST["img"],
                     "id" => $_POST["id"],
                     "desc" => $_POST["desc"]]);
-                var_dump($a);
                 $this->crepeManager->update($a);
             } else if ($_POST["submit"] == "delete") {
                 $a = $this->crepeManager->get($_POST["id"]);

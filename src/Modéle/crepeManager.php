@@ -23,6 +23,7 @@ class CrepeManager
  
     public function add(Crepe $p)
     {
+
         $query = $this->connexion->prepare("INSERT INTO crepe (img, name, type) values (?, ?, ?)");
         $query->execute([$p->getImg(), $p->getName(), $p->getType()]);
     }

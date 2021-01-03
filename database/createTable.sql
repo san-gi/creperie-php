@@ -3,9 +3,15 @@ create table crepe(
     id int NOT NULL AUTO_INCREMENT primary key,
     img varchar(64),
     name varchar(64),
-    type int     
+    type int,
+    price int null,
+    desc text
 );
+alter table crepe
+	add
 
+alter table crepe
+	add `desc` text ;
 DROP TABLE IF EXISTS produits;
 create table produits(
     id int NOT NULL AUTO_INCREMENT primary key,
