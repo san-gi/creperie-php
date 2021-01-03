@@ -54,7 +54,7 @@ class Ingredient_crepe
     /**
      * @param mixed $ingredient
      */
-    public function setIngredient($ingrdient)
+    public function setIngredient($ingredient)
     {
         $this->ingredient = $ingredient;
     }

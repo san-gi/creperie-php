@@ -37,7 +37,6 @@ class commandesManager
     }
     public function add(commandes $p)
     {
-        var_dump($p);
         $query = $this->connexion->prepare("INSERT INTO commandes (crepe, facture) values ( ?, ?)");
         $query->execute([$p->getCrepe(), $p->getFacture()]);
     }

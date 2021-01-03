@@ -15,6 +15,7 @@
             <td>NEW</td>
             <td><input type="text" id="crepe" name="crepe" value=""></td>
             <td><input type="text" id="ingredient" name="ingredient" value=""></td>
+            <td><input type="hidden" id="id" name="id" value=""></td>
             <td><div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button id="coffee-submit" type="submit" class="btn btn-sm btn-success" name="submit"
@@ -31,7 +32,7 @@
                 <td><?= $i->getId() ?></td>
                 <td><input type="text" id="crepe" name="crepe" value="<?= $i->getCrepe() ?>"></td>
                 <td><input type="text" id="ingredient" name="ingredient" value="<?= $i->getIngredient() ?>"></td>
-
+                <td><input type="hidden" id="id" name="id" value="<?= $i->getId() ?>"></td>
                 <td><div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button id="coffee-submit" type="submit" class="btn btn-sm btn-warning"

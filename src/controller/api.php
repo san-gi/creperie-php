@@ -9,6 +9,7 @@ use App\Modéle\CrepeManager;
 use App\Modéle\factureManager;
 use App\Modéle\ingredient_crepesManager;
 use App\Modéle\ingredientManager;
+use App\Modéle\Ingredient_crepe;
 use App\Modéle\user;
 use App\Modéle\userManager;
 
@@ -120,15 +121,28 @@ class api{
                             break;
                     }
                     break;
-                case "ingcrepes":
+                case "ingredients_crepe":
                     $this->ingCrepeManager = new ingredient_crepesManager();
                     $this->ingCrepeManager->setConnexion();
                     switch ($_POST["submit"]){
                         case  "post":
+                            $c = new Ingredient_crepe([
+                                "crepe" => $_POST["crepe"],
+                                "ingredient" => $_POST["ingredient"]
+                            ]);
+                            $this->ingCrepeManager->add($c);
                             break;
                         case  "edit":
+                            $c = new Ingredient_crepe([
+                                "crepe" => $_POST["crepe"],
+                                "ingredient" => $_POST["ingredient"],
+                                "id" => $_POST["id"],
+                            ]);
+                            $this->ingCrepeManager->update($c);
                             break;
                         case  "delete":
+                            $a = $this->ingCrepeManager->get($_POST["id"]);
+                            $this->ingCrepeManager->delete($a);
                             break;
                     }
                     break;
@@ -158,7 +172,7 @@ class api{
                     break;
             }
         }
-        //var_dump($_POST);
+        var_dump($_POST);
         header("Location: /admin/$url[2]");
 
 
