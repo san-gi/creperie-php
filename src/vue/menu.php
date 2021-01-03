@@ -8,7 +8,7 @@
                     <div class="card mb-4 shadow-sm">
                         <img src="/img/<?=$c->getImg()?>" class="card-img-top" alt="erreur dans le chargement de l'image">
                         <div class="card-body">
-
+                        <h4><?=$c->getName()?></h4>
 
                             <div class="d-flex justify-content-between align-items-center">
 

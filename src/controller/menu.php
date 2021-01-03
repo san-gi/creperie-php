@@ -43,7 +43,11 @@ class Menu
             $this->factureManager = new factureManager();
             $this->factureManager->setConnexion();
             $this->facture = $this->factureManager->getFactureEnCours($_SESSION["user"]->getMail());
-
+            if (isset($_POST["ValidationCommande"])) {
+                $this->facture->setEtat("Clos");
+                $this->factureManager->update($this->facture);
+                $this->facture = $this->factureManager->getFactureEnCours($_SESSION["user"]->getMail());
+            }
             $this->commandManager = new commandesManager();
             $this->commandManager->setConnexion();
             if (isset($_POST["SuppressionItem"])) {

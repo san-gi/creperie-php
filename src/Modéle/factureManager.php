@@ -52,6 +52,7 @@ class factureManager
     }
     public function getFactureEnCours($mail)
     {
+
         $request = "select * from facture where user = ? and etat = 'Non valider'";
         $query = $this->connexion->prepare($request);
         $result = array();
@@ -79,8 +80,7 @@ class factureManager
     public function update(Facture $p)
     {
 
-
-        $query = $this->connexion->prepare("UPDATE facture set user = ?, prix = ?,date = ?,etat = ? where id = ? ");
+        $query = $this->connexion->prepare("UPDATE facture set user = ?, price = ?,date = ?,etat = ? where id = ? ");
         $query->execute([$p->getUser(), $p->getPrice(),$p->getDate(),$p->getEtat(),$p->getId()]);
 
     }

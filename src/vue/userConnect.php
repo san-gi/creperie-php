@@ -2,16 +2,19 @@
     <input type="hidden" id="disconect" name="disconect">
     <button type="submit" class="btn btn-primary" >Se deconnecter </button>
 </form>
+<?php if($_SERVER["REQUEST_URI"]=="/menu")  : ?>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCommand">Finaliser la commande</button>
-
+<?php endif ?>
 <div class="modal fade" id="ModalCommand" tabindex="-1" role="dialog" aria-labelledby="ModalCreerCompteLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+
                 <h5 class="modal-title" id="ModalCreerCompteLabel">Finaliser la commande</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+
             </div>
 
             <form action="<?= $_SERVER["REQUEST_URI"] ?>" method="post">
@@ -54,7 +57,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Valider la commande</button>
+                    <form id="fin" action="/menu" method="post">
+                        <td><input type="hidden" id="ValidationCommande" name="ValidationCommande" value="ValidationCommande"></td>
+                        <button type="submit" class="btn btn-primary">Valider la commande</button>
+                    </form>
                 </div>
             </form>
         </div>
