@@ -63,6 +63,17 @@ class commandesManager
             return $result[0];
         }
     }
+    public  function getFirstByCrepe($crepe){
+        $request = "select * from commandes where crepe = ?";
+        $query = $this->connexion->prepare($request);
+        $result = array();
+        if ($query->execute([$crepe])) {
+            foreach ($query as $row) {
+                $result[] = new commandes($row);
+            }
+            return $result[0];
+        }
+    }
     public function delete(commandes $u)
     {
         $query = $this->connexion->prepare("delete from commandes where id = ? ");

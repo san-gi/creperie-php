@@ -46,6 +46,10 @@ class Menu
 
             $this->commandManager = new commandesManager();
             $this->commandManager->setConnexion();
+            if (isset($_POST["SuppressionItem"])) {
+
+                $this->commandManager->delete($this->commandManager->getFirstByCrepe($_POST["SuppressionItem"]));
+            }
             $this->crepesCommand = $this->commandManager->getAllbyFacture($this->facture->getId());
 
             foreach ($this->crepesCommand as $c){
@@ -60,7 +64,7 @@ class Menu
                 ]));
             }
 
-            $this->user = $this->renderer("../Src/Vue/userConnect.php");
+                $this->user = $this->renderer("../Src/Vue/userConnect.php");
         }
         else{
             $this->user = $this->renderer("../Src/Vue/userNoConnect.php");

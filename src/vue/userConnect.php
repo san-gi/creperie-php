@@ -30,13 +30,14 @@
                     <?php foreach ($this->crepesInFacture as $c) : ?>
                         <tr>
                             <form action="/menu" method="post">
+                                <td><input type="hidden" id="SuppressionItem" name="SuppressionItem" value="<?= $c->getName() ?>"></td>
 
-                            </form>
                             <td><?= $c->getName() ?></td>
                             <td><?= $c->getPrice() ?></td>
                             <td><button type="submit" class="close" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button></td>
+                            </form>
                         </tr>
 
 
@@ -53,7 +54,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Créer un compte</button>
+                    <button type="submit" class="btn btn-primary">Valider la commande</button>
                 </div>
             </form>
         </div>
